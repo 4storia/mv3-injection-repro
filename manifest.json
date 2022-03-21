@@ -1,0 +1,20 @@
+{
+  "name": "Manifest V3 remote code injection repro",
+  "version": "1.0.0",
+  "description": "Repro for potential bug",
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": ["content-script.js"],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject-remote-content.js"],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "manifest_version": 3
+}
